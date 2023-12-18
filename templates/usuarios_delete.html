@@ -1,9 +1,14 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <title>Deletar Usuário</title>
+  </head>
   <body>
+    <h1>Deletar Usuário</h1>
     tem certeza que deseja excluir o usuário {{u.nome}}?
-    <form method = 'post' action="/usuarios/delete{{u.id}}">
+    <form method = 'post' action="/usuarios/delete/{{u.id}}">
     <input type="submit" value = "Sim">
       </form>
-  <a href="/usuarios/recovery">cancelar</a>
+  <a href="/usuarios/menu">cancelar</a>
   </body>
 </html>

@@ -1,14 +1,18 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <title>Lista de Usuários</title>
+  </head>
 <body>
  <ul>
+   <h1>Lista de Usuários</h1>
      {% for u in usuarios%}
      <li>
-       {{u.nome}} - {{u.email}} - {{u.senha}}
-        <a href="/usuarios/update/{{u.id}}">editar</a>
-        <a href="/usuarios/delete/{{u.id}}">deletar</a>
-       
+       {{u.nome}} - {{u.cpf}} - {{u.sexo}} - {{u.data}} -
+       {{u.id}}
      </li>
      {% endfor %}
+    <a href="/usuarios/menu">voltar</a>
  </ul>
 </body>  
 </html>

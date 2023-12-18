@@ -1,11 +1,19 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <title>
+      Atualizar Usuário
+    </title>
+  </head>
 <body>
-  <form method = 'post' action = '/usuarios/update{{u.id}}'>
+  <h1>Atualizar Usuário</h1>
+  <form method = 'post' action = '/usuarios/update/{{u.id}}'>
     Nome : <input type="text" name="nome" value ="{{u.nome}}"> <br>
-    E-mail: <input type = "text" name = "email" value = "{{u.email}}"><br>
-    Senha: <input type = "password" name = "senha"><br>
-    Confirmação de senha: <input type = "password" name = "csenha"><br>
+    Cpf: <input type = "text" name = "cpf" value = "{{u.cpf}}"><br>
+    Sexo: <input type = "text" name = "sexo" value = "{{u.sexo}}"><br>
+    Data: <input type = "text" name = "data" value = "{{u.data}}"><br>
     <input type = "submit" value = "Atualizar">
+     <a href="/usuarios/menu">voltar</a>
   </form>
 </body>  
 </html>

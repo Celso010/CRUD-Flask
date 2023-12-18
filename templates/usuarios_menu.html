@@ -1,0 +1,49 @@
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>Opções de Usuário</title>
+  </head>
+  <body>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+      <h1>Opções de Usuário</h1>
+      <a href="/usuarios/create">Criar</a>
+      <a href="/usuarios/recovery">Listar</a>
+      <a href="#" onclick="updateUser()">Atualizar</a>
+      <a href="#" onclick="deleteUser()">Deletar</a>
+
+    <script>
+        function updateUser() {
+            var userId = prompt("Digite o ID do usuário que deseja atualizar:");
+            if (userId != null) {
+                // Verifica se o ID inserido é um número válido
+                if (!isNaN(userId)) {
+                    window.location.href = "/usuarios/update/" + userId;
+                } else {
+                    alert("Por favor, insira um ID válido.");
+                }
+            }
+        }
+
+        function deleteUser() {
+            var userId = prompt("Digite o ID do usuário que deseja deletar:");
+            if (userId != null) {
+                // Verifica se o ID inserido é um número válido
+                if (!isNaN(userId)) {
+                    window.location.href = "/usuarios/delete/" + userId;
+                } else {
+                    alert("Por favor, insira um ID válido.");
+                }
+            }
+        }
+    </script>
+
+  </body>
+  </html>
+

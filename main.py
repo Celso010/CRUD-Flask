@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, get_flashed_messages
+from flask.templating import render_template
 from flask_migrate import Migrate
 
 from database import db
@@ -19,7 +20,8 @@ db.init_app(app)
 migrate = Migrate(app,db)
 @app.route('/')
 def index():
-    return 'Opa!'
+    messages = get_flashed_messages()
+    return render_template('usuarios_menu.html',messages=messages)
 
 
 app.run(host='0.0.0.0', port=81)

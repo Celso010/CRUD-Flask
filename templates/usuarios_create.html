@@ -1,11 +1,28 @@
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+</head>
 <body>
-  <form method = 'post' action = '/usuarios/create'>
-    Nome : <input type="text" name="nome"><br>
-    E-mail: <input type = "text" name = "email"><br>
-    Senha: <input type = "password" name = "senha"><br>
-    Confirmação de senha: <input type = "password" name = "csenha"><br>
-    <input type = "submit" value = "Cadastrar">
-  </form>
-</body>  
+  <h1>Cadastro de Usuário</h1>
+
+    <form method='post' action='/usuarios/create'>
+        Nome : <input type="text" name="nome"><br>
+        Cpf: <input type="text" name="cpf"><br>
+        Sexo: <input type="text" name="sexo"><br>
+        Data de Nascimento: <input type="text" name="data"><br>
+        <input type="submit" value="Cadastrar">
+        <a href="/usuarios/menu">Voltar</a>
+      {% if messages %}
+          <ul>
+              {% for message in messages %}
+                  <li>{{ message }}</li>
+              {% endfor %}
+          </ul>
+      {% endif %}
+    </form>
+</body>
 </html>
